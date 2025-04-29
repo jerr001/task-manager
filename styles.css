@@ -21,6 +21,8 @@ body {
 h1 {
   text-align: center;
   color: #333;
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
 
 .task-input, .search-input {
@@ -49,6 +51,7 @@ button {
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
+  line-height: 1.5;
 }
 
 button:hover {
@@ -119,11 +122,6 @@ button.clear-btn:hover {
   color: #495057;
 }
 
-.task-item .date-label {
-  background-color: #e3f2fd;
-  color: #0d47a1;
-}
-
 .priority-high {
   background-color: #f8d7da;
   color: #721c24;
@@ -160,10 +158,14 @@ button.clear-btn:hover {
   background-color: #0056b3;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .container {
-    width: 100%;
+    max-width: 90%;
     padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.75rem;
   }
 
   .task-input, .search-input {
@@ -172,6 +174,16 @@ button.clear-btn:hover {
 
   #taskInput, #searchInput, #dateInput, #timeInput, #priorityInput, button {
     width: 100%;
+    font-size: 14px;
+  }
+
+  #dateInput, #timeInput, #priorityInput {
+    flex: 1;
+  }
+
+  button {
+    padding: 10px;
+    font-size: 14px;
   }
 
   .task-item .task-content {
@@ -182,5 +194,83 @@ button.clear-btn:hover {
 
   .task-item .priority-label, .task-item .date-label, .task-item .time-label {
     margin-right: 0;
+    font-size: 11px;
+  }
+
+  .task-item .task-content span:last-child {
+    min-width: 100%;
+    font-size: 14px;
+  }
+
+  .task-item .actions {
+    gap: 8px;
+  }
+
+  .task-item button {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 100%;
+    padding: 10px;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  .task-input, .search-input {
+    gap: 8px;
+    margin-bottom: 15px;
+  }
+
+  #taskInput, #searchInput, #dateInput, #timeInput, #priorityInput {
+    padding: 6px;
+    font-size: 14px;
+  }
+
+  button {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .task-item {
+    padding: 8px;
+    margin-bottom: 8px;
+  }
+
+  .task-item input[type="checkbox"] {
+    margin-right: 8px;
+    transform: scale(1.2);
+  }
+
+  .task-item .task-content {
+    gap: 4px;
+  }
+
+  .task-item .priority-label, .task-item .date-label, .task-item .time-label {
+    padding: 1px 4px;
+    font-size: 10px;
+  }
+
+  .task-item .task-content span:last-child {
+    font-size: 14px;
+  }
+
+  .task-item .actions {
+    gap: 10px;
+  }
+
+  .task-item button {
+    padding: 6px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    min-width: 60px;
   }
 }
